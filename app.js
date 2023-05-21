@@ -9,10 +9,21 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 app.use(express.json()); // Parse JSON request bodies
 
 app.post('/data', (req, res) => {
-  const sensorData = req.body; // Access the data sent by ESP32
-  // Process the data and perform any necessary actions
-  console.log('Received data:', sensorData);
-  res.sendStatus(200); // Send a response back to ESP32
+    const sensorData = req.body; // Access the data sent by ESP32
+    // Process the data and perform any necessary actions
+    console.log('Received data:', sensorData);
+    res.sendStatus(200); // Send a response back to ESP32
+});
+
+app.get('/data', (req, res) => {
+    // const sensorData = req.query; // Access the data sent as query parameters
+    // // Process the data and perform any necessary actions
+    // console.log('Received data:', sensorData);
+    const responseData = {
+        message: 'Data sent successfully from laptop',
+    };
+    res.json(responseData);
+    res.sendStatus(200); // Send a response back to the requester
 });
 
 const html = `
