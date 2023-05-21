@@ -1,0 +1,66 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  p {
+    line-height: 1.5;
+  }
+  
+  /* Task list styles */
+  .task-list {
+    margin-top: 40px;
+  }
+  
+  .task-title {
+    font-weight: bold;
+  }
+  
+  .why-important {
+    font-size: 0.8em;
+    margin-bottom: 0;
+  }
+  
+  /* Schedule styles */
+  .schedule {
+    margin-top: 40px;
+  }
+  
+  .schedule li {
+    margin-bottom: 10px;
+  }
+  
+  /* Customization styles */
+  .customization {
+    margin-top: 40px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  select {
+    display: block;
+    margin-bottom: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
