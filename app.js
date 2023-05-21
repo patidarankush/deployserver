@@ -19,9 +19,9 @@ app.post('/data', (req, res) => {
 });
 
 app.get('/data', (req, res) => {
-    // const sensorData = req.query; // Access the data sent as query parameters
+    const sensorDataRecived = req.query; // Access the data sent as query parameters
     // // Process the data and perform any necessary actions
-    // console.log('Received data:', sensorData);
+    console.log('Received data:', sensorData);
     const responseData = {
         message: 'Data sent successfully from laptop',
     };
