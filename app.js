@@ -6,6 +6,14 @@ app.get("/", (req, res) => res.type('html').send(html));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
+app.use(express.json()); // Parse JSON request bodies
+
+app.post('/data', (req, res) => {
+  const sensorData = req.body; // Access the data sent by ESP32
+  // Process the data and perform any necessary actions
+  console.log('Received data:', sensorData);
+  res.sendStatus(200); // Send a response back to ESP32
+});
 
 const html = `
 <!DOCTYPE html>
