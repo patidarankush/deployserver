@@ -1,6 +1,9 @@
 const express = require("express");
+const cors = require("cors"); // Import the cors package
 const app = express();
 const port = process.env.PORT || 3001;
+
+app.use(cors()); // Enable CORS for all routes
 
 app.get("/", (req, res) => res.type('html').send(html));
 
