@@ -19,6 +19,6 @@ app.post('/data', (req, res) => {
 
 // Start the server
 // const port = 3000; // Use any available port
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
 });
