@@ -7,26 +7,35 @@ app.use(cors()); // Enable CORS for all routes
 
 app.get("/", (req, res) => res.type('html').send(html));
 
+//defining global variables
+let temperature = null;
+let humidity = null;
+let weedDetected = false;
+let soilMoisture = null;
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 app.use(express.json()); // Parse JSON request bodies
 
 app.post('/data', (req, res) => {
-    const sensorData = req.body; // Access the data sent by ESP32
-    // Process the data and perform any necessary actions
+    const sensorData = req.body;
+    temperature = sensorData.temperature;
+    humidity = sensorData.humidity;
+    weedDetected = sensorData.weedDetected;
+    soilMoisture = sensorData.soilMoisture;
     console.log('Received data:', sensorData);
-    res.sendStatus(200); // Send a response back to ESP32
+    res.sendStatus(200);
 });
 
 app.get('/data', (req, res) => {
-    // const sensorData = req.query; // Access the data sent as query parameters
-    // // Process the data and perform any necessary actions
-    // console.log('Received data:', sensorData);
     const responseData = {
-        message: 'Data sent successfully from laptop',
+        temperature,
+        humidity,
+        weedDetected,
+        soilMoisture
     };
     res.json(responseData);
-    res.sendStatus(200); // Send a response back to the requester
+    res.sendStatus(200);
 });
 
 const html = `
